@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 
 const IM = {
@@ -99,25 +98,20 @@ a{text-decoration:none;}
 img{max-width:100%;display:block;}
 
 /* ─── Top bar ────────────────────────────────── */
-.tb{background:linear-gradient(135deg,#3b1c1d,#5a2020);color:rgba(255,255,255,.85);padding:6px 12px;display:flex;justify-content:center;align-items:center;font-size:9.5px;letter-spacing:.03em;gap:4px;flex-wrap:wrap;text-align:center;overflow:hidden;}
+.tb{background:linear-gradient(135deg,#3b1c1d,#5a2020);color:rgba(255,255,255,.85);padding:8px 16px;display:flex;justify-content:center;align-items:center;font-size:10px;letter-spacing:.04em;gap:4px;flex-wrap:wrap;text-align:center;}
 .tb a{color:#c9a84c;}
 .tb-region{display:none;}
 
 /* ─── Nav ────────────────────────────────────── */
-.main-nav{position:sticky;top:0;z-index:200;background:#ffffff;border-bottom:1px solid rgba(201,168,76,.15);display:flex;align-items:center;justify-content:space-between;padding:0 12px;height:58px;box-shadow:0 1px 0 rgba(201,168,76,.1);transition:background .3s,box-shadow .3s;overflow:visible;}
+.main-nav{position:sticky;top:0;z-index:200;background:#ffffff;border-bottom:1px solid rgba(201,168,76,.15);display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:60px;box-shadow:0 1px 0 rgba(201,168,76,.1);transition:background .3s,box-shadow .3s;}
 .main-nav.scrolled{background:rgba(255,252,246,.98);border-bottom-color:rgba(201,168,76,.3);box-shadow:0 4px 20px rgba(0,0,0,.1);}
-.ham{background:none;border:none;color:#1a1210;font-size:22px;cursor:pointer;padding:8px;display:flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;flex-shrink:0;}
-.nlw{display:none;list-style:none;margin:0;padding:0;}
-.nlw.open{display:flex;flex-direction:column;position:fixed;top:58px;left:0;right:0;background:#ffffff;border-bottom:2px solid rgba(201,168,76,.25);box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:199;padding:4px 0 12px;max-height:calc(100vh - 58px);overflow-y:auto;}
+.ham{background:none;border:none;color:#1a1210;font-size:22px;cursor:pointer;padding:8px;display:flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;}
+.nlw{display:none;list-style:none;}
+.nlw.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#ffffff;border-bottom:2px solid rgba(201,168,76,.25);box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:199;padding:4px 0 12px;}
 .nlw li{width:100%;}
 .nl{display:block;width:100%;padding:14px 20px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1a1210;font-weight:600;cursor:pointer;background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;text-align:left;transition:color .2s,background .2s;border-left:3px solid transparent;}
 .nl:hover,.nl.active{color:#c9a84c;background:#fffbf2;border-left-color:#c9a84c;}
 .cta-nav{display:block;width:calc(100% - 32px);margin:8px 16px 4px;background:linear-gradient(135deg,#c9a84c,#ddb842);color:#1a1210;font-weight:700;padding:14px 20px;text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:none;border-radius:2px;font-family:'Plus Jakarta Sans',sans-serif;}
-/* ─── Logo ───────────────────────────────────── */
-.logo-wrap{display:flex;align-items:center;gap:10px;}
-.logo-name{font-weight:700;font-size:14px;color:#1a1210;line-height:1.1;white-space:nowrap;}
-.logo-tag{font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:#c9a84c;margin-top:2px;white-space:nowrap;}
-.logo-img{width:36px;height:36px;border-radius:3px;object-fit:cover;flex-shrink:0;}
 
 /* ─── Hero container ─────────────────────────── */
 .hc{position:relative;z-index:2;padding:48px 16px 40px;max-width:1200px;width:100%;margin:0 auto;}
@@ -170,44 +164,11 @@ img{max-width:100%;display:block;}
 /* ════════════════════════════════════════════════
    TABLET  ≥ 640px
 ════════════════════════════════════════════════ */
-/* ════════════════════════════════════════════════
-   SMALL PHONE  max 480px — very tiny overrides
-════════════════════════════════════════════════ */
-@media(max-width:480px){
-  .tb{font-size:8.5px;padding:5px 8px;gap:2px;}
-  .main-nav{height:52px;padding:0 8px;}
-  .nlw.open{top:52px;max-height:calc(100vh - 52px);}
-  .logo-name{font-size:12px;}
-  .logo-tag{font-size:6.5px;letter-spacing:.1em;}
-  .logo-img{width:30px;height:30px;}
-  .logo-wrap{gap:7px;}
-  .hc{padding:32px 12px 24px;}
-  .ps{padding:28px 12px;}
-  .ham{font-size:20px;padding:6px;min-width:36px;min-height:36px;}
-}
-@media(max-width:360px){
-  .tb{font-size:8px;padding:4px 6px;}
-  .main-nav{height:48px;padding:0 6px;}
-  .nlw.open{top:48px;max-height:calc(100vh - 48px);}
-  .logo-name{font-size:11px;}
-  .logo-tag{display:none;}
-  .logo-img{width:28px;height:28px;}
-  .logo-wrap{gap:6px;}
-  .hc{padding:28px 10px 20px;}
-}
-
-/* ════════════════════════════════════════════════
-   TABLET  ≥ 640px
-════════════════════════════════════════════════ */
 @media(min-width:640px){
   .tb{justify-content:space-between;text-align:left;flex-wrap:nowrap;padding:7px 24px;font-size:11px;}
   .tb-region{display:block;}
   .main-nav{padding:0 24px;height:66px;}
-  .nlw.open{top:66px;max-height:calc(100vh - 66px);}
-  .logo-name{font-size:16px;}
-  .logo-tag{font-size:8px;}
-  .logo-img{width:40px;height:40px;}
-  .logo-wrap{gap:12px;}
+  .nlw.open{top:66px;}
   .hc{padding:60px 24px 48px;}
   .ps{padding:52px 24px;}
   .hs-row{gap:28px;}
@@ -229,11 +190,7 @@ img{max-width:100%;display:block;}
 @media(min-width:960px){
   .tb{padding:8px 48px;}
   .main-nav{padding:0 48px;height:72px;}
-  .logo-name{font-size:17px;}
-  .logo-tag{font-size:8.5px;}
-  .logo-img{width:44px;height:44px;}
-  .logo-wrap{gap:14px;}
-  .nlw{display:flex!important;flex-direction:row!important;position:static!important;background:transparent!important;border:none!important;padding:0!important;box-shadow:none!important;gap:28px;align-items:center;max-height:none!important;overflow:visible!important;}
+  .nlw{display:flex!important;flex-direction:row;position:static;background:transparent;border:none;padding:0;box-shadow:none;gap:28px;align-items:center;}
   .nlw li{width:auto;}
   .nl{display:inline-block;width:auto;padding:4px 0;font-size:12px;letter-spacing:.1em;color:rgba(26,18,16,.68);background:transparent;border-left:none;position:relative;}
   .nl::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#c9a84c;transition:width .3s;}
@@ -320,11 +277,11 @@ function SS({slides}){
 
 function Logo(){
   return(
-    <div className="logo-wrap">
-      <img src={IM.logo} alt="Gulf Trade Hub" className="logo-img" />
+    <div style={{display:"flex",alignItems:"center",gap:"clamp(8px, 2vw, 16px)",textAlign:"left"}}>
+      <img src={IM.logo} alt="Gulf Trade Hub" style={{width:"clamp(36px, 10vw, 44px)",height:"clamp(36px, 10vw, 44px)",borderRadius:3,objectFit:"cover",flexShrink:0}} />
       <div>
-        <div className="logo-name">Gulf Trade Hub LLC</div>
-        <div className="logo-tag">From Local to Global</div>
+        <div className="sr" style={{fontWeight:700,fontSize:"clamp(14px, 4vw, 17px)",color:"#1a1210",lineHeight:1.1}}>Gulf Trade Hub LLC</div>
+        <div style={{fontSize:"clamp(7px, 2vw, 8px)",letterSpacing:".17em",textTransform:"uppercase",color:"#c9a84c",marginTop:2}}>From Local to Global</div>
       </div>
     </div>
   );
@@ -344,9 +301,9 @@ function Nav({page,sp}){
   const links=[["home","Home"],["about","About Us"],["products","Products"],["contact","Contact"]];
   return(
     <nav className={`main-nav${sc?" scrolled":""}`}>
-      <button onClick={()=>{sp("home");smo(false);}} style={{background:"none",border:"none",cursor:"pointer",padding:0,flexShrink:1,minWidth:0}}><Logo/></button>
-      <button className="ham" onClick={()=>smo(!mo)} aria-label="Menu" aria-expanded={mo}>{mo?"✕":"☰"}</button>
-      <ul className={`nlw${mo?" open":""}`}>
+      <button onClick={()=>{sp("home");smo(false);}} style={{background:"none",border:"none",cursor:"pointer",padding:0,textAlign:"left"}}><Logo/></button>
+      <button className="ham" onClick={()=>smo(!mo)} aria-label="Menu">☰</button>
+      <ul className={`nlw ${mo?"open":""}`}>
         {links.map(([pg,lbl])=>(<li key={lbl}><button className={lbl==="Contact"?"cta-nav":`nl${page===pg?" active":""}`} onClick={()=>{sp(pg);smo(false);}}>{lbl}</button></li>))}
       </ul>
     </nav>
@@ -375,14 +332,14 @@ function Ft({sp}){
 function Home({sp}){
   return(
     <>
-      <div style={{position:"relative",minHeight:"clamp(420px,80vw,700px)",display:"flex",alignItems:"center",overflow:"hidden"}}>
+      <div style={{position:"relative",minHeight:"clamp(460px,90vw,700px)",display:"flex",alignItems:"center",overflow:"hidden"}}>
         <video autoPlay muted loop playsInline style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:"center center"}} src={BANNER_VIDEO}/>
         <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(5,14,25,.92) 0%,rgba(5,14,25,.72) 55%,rgba(5,14,25,.35) 100%)"}}/>
         <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(5,14,25,.8) 0%,transparent 60%)"}}/>
         <div className="hc">
-          <div style={{fontSize:10,letterSpacing:".22em",textTransform:"uppercase",color:"#c9a84c",marginBottom:"clamp(16px,2.5vw,26px)",display:"flex",alignItems:"center",gap:12}}><span style={{display:"block",width:38,height:1,background:"#c9a84c"}}/>Est. 2024 — Dubai, UAE · Marine & Industrial Supply</div>
-          <h1 className="sr" style={{fontSize:"clamp(30px,7vw,72px)",fontWeight:600,color:"#fff8ee",lineHeight:1.05,marginBottom:22}}>Supplying the <em style={{color:"#c9a84c"}}>Seas,</em><br/>Trusted on <em style={{color:"#c9a84c"}}>Every Voyage</em></h1>
-          <p style={{fontSize:"clamp(13px,1.5vw,15px)",color:"rgba(255,255,255,.85)",maxWidth:"min(520px,100%)",lineHeight:1.85,marginBottom:"clamp(28px,4vw,46px)"}}>Marine light diffusers, industrial valves, pipes, safety gear & ship chandling — delivered to vessels and ports across UAE, GCC and East Africa.</p>
+          <div style={{fontSize:"clamp(8px, 2.2vw, 10px)",letterSpacing:".2em",textTransform:"uppercase",color:"#c9a84c",marginBottom:"clamp(16px,2.5vw,26px)",display:"flex",alignItems:"flex-start",gap:12}}><span style={{display:"block",width:38,height:1,background:"#c9a84c",marginTop:6,flexShrink:0}}/><span style={{flex:1}}>Est. 2024 — Dubai, UAE · Marine & Industrial Supply</span></div>
+          <h1 className="sr" style={{fontSize:"clamp(34px,8vw,72px)",fontWeight:600,color:"#fff8ee",lineHeight:1.05,marginBottom:22}}>Supplying the <em style={{color:"#c9a84c"}}>Seas,</em><br/>Trusted on <em style={{color:"#c9a84c"}}>Every Voyage</em></h1>
+          <p style={{fontSize:"clamp(14px,1.5vw,15px)",color:"rgba(255,255,255,.85)",maxWidth:"min(520px,100%)",lineHeight:1.65,marginBottom:"clamp(28px,4vw,46px)"}}>Marine light diffusers, industrial valves, pipes, safety gear & ship chandling — delivered to vessels and ports across UAE, GCC and East Africa.</p>>
           <div className="hs-row" style={{marginBottom:28}}>
             {[["2,000+","Active Clients"],["3","Regions"],["12+","Years"]].map(([n,l],i)=>(<div key={l} className={i>0?"hs":""}><div className="sr" style={{fontSize:"clamp(24px,5vw,36px)",fontWeight:700,color:"#f0c84a",lineHeight:1}}>{n}</div><div style={{fontSize:"clamp(9px,1vw,10px)",letterSpacing:".12em",textTransform:"uppercase",color:"rgba(255,248,240,.85)",marginTop:4}}>{l}</div></div>))}
           </div>
